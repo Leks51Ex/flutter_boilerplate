@@ -11,7 +11,7 @@ import 'package:flutter_boilerplate/features/settings/domain/entities/theme_mana
 import 'package:flutter_boilerplate/features/settings/domain/entities/theme_modes.dart';
 
 AppWm appWmFactory(BuildContext context) {
-  final AppModel model = AppModel();
+  final AppModel model = AppModel(sl(), sl());
 
   return AppWm(model);
 }
@@ -57,7 +57,7 @@ class AppWm extends WidgetModel<App, AppModel> implements AppIWm {
     _updateThemeManager();
   }
 
-//TODO create Language
+// TODO create Language
 //   void _updateLocale(Language lang) {
 //     _languageCode.value = lang.code;
 //   }
@@ -65,10 +65,10 @@ class AppWm extends WidgetModel<App, AppModel> implements AppIWm {
   void _handleBrightnessChanges() {
     // ? If system theme mode configured and theme have not been
     // ? changed manually
-    // if (model.mode == AppThemeMode.system && !model.isManualConfigured) {
-    //   _resolveBrightness();
-    // }
-    // WidgetsBinding.instance.handlePlatformBrightnessChanged();
+    if (model.mode == AppThemeMode.system && !model.isManualConfigured) {
+      _resolveBrightness();
+    }
+    WidgetsBinding.instance.handlePlatformBrightnessChanged();
 
     _resolveBrightness();
   }
@@ -95,8 +95,13 @@ class AppWm extends WidgetModel<App, AppModel> implements AppIWm {
   /* ---------------------------- Init widget model --------------------------- */
 
   @override
-  void initWidgetModel() {
-    // TODO: implement initWidgetModel
+  void initWidgetModel() async {
+    _updateThemeColors(model.mode);
+    model.mode$.listen(_updateThemeColors);
+    // model.language$.listen(_updateLocale);
+    _platformDispatcher = WidgetsBinding.instance.platformDispatcher;
+    _platformDispatcher.onPlatformBrightnessChanged = _handleBrightnessChanges;
+    await model.restoreSettings().run();
     super.initWidgetModel();
   }
 }

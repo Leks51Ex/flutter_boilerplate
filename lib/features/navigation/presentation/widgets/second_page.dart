@@ -2,7 +2,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_boilerplate/features/settings/domain/entities/app_colors.dart';
-import 'package:flutter_boilerplate/features/settings/domain/entities/theme_manager.dart';
 
 @RoutePage()
 class TestSecondPage extends StatelessWidget {
