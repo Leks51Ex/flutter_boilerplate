@@ -1,6 +1,7 @@
 //Test page will be removed
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_boilerplate/features/settings/domain/entities/app_colors.dart';
 
 @RoutePage()
 class TestFirstPage extends StatelessWidget {
@@ -8,8 +9,13 @@ class TestFirstPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final AppColors? appColors = Theme.of(context).extension<AppColors>();
     return Scaffold(
-      body: Text('First page'),
+      body: Container(
+          width: 300,
+          height: 300,
+          color: appColors!.background,
+          child: Text('first page')),
     );
   }
 }
