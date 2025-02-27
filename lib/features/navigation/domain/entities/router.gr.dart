@@ -10,20 +10,39 @@
 part of 'router.dart';
 
 /// generated route for
-/// [TestPage]
-class TestRoute extends PageRouteInfo<void> {
-  const TestRoute({List<PageRouteInfo>? children})
+/// [TestFirstPage]
+class TestFirstRoute extends PageRouteInfo<void> {
+  const TestFirstRoute({List<PageRouteInfo>? children})
       : super(
-          TestRoute.name,
+          TestFirstRoute.name,
           initialChildren: children,
         );
 
-  static const String name = 'TestRoute';
+  static const String name = 'TestFirstRoute';
 
   static PageInfo page = PageInfo(
     name,
     builder: (data) {
-      return const TestPage();
+      return const TestFirstPage();
+    },
+  );
+}
+
+/// generated route for
+/// [TestSecondPage]
+class TestSecondRoute extends PageRouteInfo<void> {
+  const TestSecondRoute({List<PageRouteInfo>? children})
+      : super(
+          TestSecondRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'TestSecondRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      return const TestSecondPage();
     },
   );
 }
