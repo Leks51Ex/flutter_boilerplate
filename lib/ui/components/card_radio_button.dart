@@ -1,5 +1,6 @@
 import 'package:elementary/elementary.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_boilerplate/common/app_colors.dart';
 import 'package:flutter_boilerplate/ui/components/card_radio_button.wm.iface.dart';
 import 'package:flutter_boilerplate/ui/util/responsivity.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -39,17 +40,9 @@ class CardRadioButton extends ElementaryWidget<CardRadioButtonWM> {
               child: Stack(
                 children: [
                   ThemeToggleComponent(
+                    enabled: enabled,
                     titleTheme: wm.title,
                   ),
-                  if (enabled)
-                    Positioned(
-                      right: 8,
-                      top: 8,
-                      child: Icon(
-                        Icons.check,
-                        color: Colors.green,
-                      ),
-                    ),
                 ],
               ),
             ),
@@ -61,11 +54,13 @@ class CardRadioButton extends ElementaryWidget<CardRadioButtonWM> {
 }
 
 class ThemeToggleComponent extends StatelessWidget {
-  final titleTheme;
+  final String titleTheme;
+  final bool enabled;
 
   const ThemeToggleComponent({
     super.key,
     required this.titleTheme,
+    required this.enabled,
   });
 
   @override
@@ -75,7 +70,11 @@ class ThemeToggleComponent extends StatelessWidget {
         borderRadius: BorderRadius.circular(8),
       ),
       child: Row(
-        children: [Text(titleTheme)],
+        children: [
+          Icon(Icons.color_lens_outlined),
+          Text(titleTheme),
+          Visibility(visible: enabled, child: Icon(Icons.check))
+        ],
       ),
     );
   }
