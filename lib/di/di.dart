@@ -6,6 +6,8 @@ import 'package:flutter_boilerplate/features/settings/domain/entities/theme/them
 import 'package:flutter_boilerplate/features/settings/presentation/logic/cubit/settings_cubit.dart';
 import 'package:get_it/get_it.dart';
 import 'package:hive/hive.dart';
+import 'package:flutter_boilerplate/l10n/generated/app_localizations.g.dart';
+import 'package:flutter_boilerplate/l10n/generated/app_localizations_en.g.dart';
 
 final GetIt sl = GetIt.instance;
 
@@ -38,6 +40,16 @@ Future<void> setupDiContainer(HiveInterface hive) async {
       ),
     );
   });
+  /* ------------------------------ Localization Settings ----------------------------- */
+  sl.registerFactoryParam<AppLocalizations, BuildContext, void>(
+    (BuildContext context, _) {
+      AppLocalizations? localization = AppLocalizations.of(context);
+      if (localization == null) {
+        return AppLocalizationsEn();
+      }
+      return localization;
+    },
+  );
   /* ----------------------------- Cubit settings ----------------------------- */
 
   sl.registerSingleton<SettingsCubit>(SettingsCubit());

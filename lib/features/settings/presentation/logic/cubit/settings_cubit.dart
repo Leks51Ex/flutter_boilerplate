@@ -4,6 +4,7 @@
 // from head person from Communication and Radionavigation
 
 import 'package:bloc/bloc.dart';
+import 'package:flutter_boilerplate/features/settings/domain/entities/language/language.dart';
 import 'package:flutter_boilerplate/features/settings/domain/entities/theme/theme_modes.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
@@ -16,26 +17,26 @@ class SettingsCubit extends Cubit<SettingsState> {
           state ??
               const SettingsState(
                 mode: AppThemeMode.system,
-                // language: Language(
-                //   code: 'en',
-                //   locale: 'en',
-                //   language: 'English',
-                //   nativeLanguage: 'English',
-                // ),
-                // supportedLanguages: <Language>[
-                //   Language(
-                //     code: 'en',
-                //     locale: 'en',
-                //     language: 'English',
-                //     nativeLanguage: 'English',
-                //   ),
-                //   Language(
-                //     code: 'ru',
-                //     locale: 'ru',
-                //     language: 'Russian',
-                //     nativeLanguage: 'Русский',
-                //   ),
-                // ],
+                language: Language(
+                  code: 'ru',
+                  locale: 'ru',
+                  language: 'Russian',
+                  nativeLanguage: 'Русский',
+                ),
+                supportedLanguages: <Language>[
+                  Language(
+                    code: 'ru',
+                    locale: 'ru',
+                    language: 'Russian',
+                    nativeLanguage: 'Русский',
+                  ),
+                  Language(
+                    code: 'en',
+                    locale: 'en',
+                    language: 'English',
+                    nativeLanguage: 'English',
+                  ),
+                ],
               ),
         );
 
@@ -48,11 +49,11 @@ class SettingsCubit extends Cubit<SettingsState> {
     );
   }
 
-  // void changeLang(Language lang) {
-  //   emit(
-  //     state.copyWith(
-  //       language: lang,
-  //     ),
-  //   );
-  // }
+  void changeLang(Language lang) {
+    emit(
+      state.copyWith(
+        language: lang,
+      ),
+    );
+  }
 }

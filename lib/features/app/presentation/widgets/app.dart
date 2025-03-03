@@ -25,6 +25,8 @@ class App extends ElementaryWidget<AppIWm> {
                 debugShowCheckedModeBanner: false,
                 routerConfig: wm.routerConfig,
                 theme: themeManager.currentTheme,
+                locale: Locale(wm.languageCode.value),
+                localizationsDelegates: wm.localizationDelegates,
               );
             });
           }),

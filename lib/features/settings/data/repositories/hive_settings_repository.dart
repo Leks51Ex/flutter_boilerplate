@@ -150,13 +150,12 @@ class HiveSettingsRepository implements SettingsRepository {
 
   @override
   TaskEither<Failure, Unit> saveLanguageSettings(String languageCode) {
-    // return extractDto()
-    //     .flatMap(
-    //       (AppSettingsDto r) => TaskEither<Failure, AppSettingsDto>.of(
-    //         r.copyWith(code: languageCode),
-    //       ),
-    //     )
-    //     .flatMap(storeDto);
-    throw UnimplementedError();
+    return extractDto()
+        .flatMap(
+          (AppSettingsDto r) => TaskEither<Failure, AppSettingsDto>.of(
+            r.copyWith(code: languageCode),
+          ),
+        )
+        .flatMap(storeDto);
   }
 }

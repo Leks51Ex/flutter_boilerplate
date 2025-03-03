@@ -7,8 +7,10 @@ import 'package:flutter_boilerplate/features/app/presentation/widgets/app.dart';
 import 'package:flutter_boilerplate/features/app/presentation/wm/app_iwm.dart';
 import 'package:flutter_boilerplate/features/navigation/domain/entities/router.dart';
 import 'package:flutter_boilerplate/common/app_colors.dart';
+import 'package:flutter_boilerplate/features/settings/domain/entities/language/language.dart';
 import 'package:flutter_boilerplate/features/settings/domain/entities/theme/theme_manager.dart';
 import 'package:flutter_boilerplate/features/settings/domain/entities/theme/theme_modes.dart';
+import 'package:flutter_boilerplate/l10n/generated/app_localizations.g.dart';
 
 AppWm appWmFactory(BuildContext context) {
   final AppModel model = AppModel(sl(), sl());
@@ -18,34 +20,40 @@ AppWm appWmFactory(BuildContext context) {
 
 class AppWm extends WidgetModel<App, AppModel> implements AppIWm {
 /* ---------------------------------- Data ---------------------------------- */
-
-  final AppRouter _router;
-  final ValueNotifier<String> _languageCode;
+  // Theme colors changes notifier
   final ValueNotifier<AppColors> _themeColors;
+/* -------------------------------------------------------------------------- */
+  final ValueNotifier<String> _languageCode;
 
+/* -------------------------------------------------------------------------- */
+  /// General application router
+  final AppRouter _router;
+/* -------------------------------------------------------------------------- */
   /// Platform dispatcher instance to handle  [Brightness] changes
   late PlatformDispatcher _platformDispatcher;
-
-  /* ------------------------------- Constructor ------------------------------ */
-
-  AppWm(super.model)
-      : _router = AppRouter(),
-        _themeColors = ValueNotifier<AppColors>(AppColors.light),
-        _languageCode =
-            ValueNotifier<String>('en'); //TODO init language code from model
-
-  /* --------------------------------- Getters -------------------------------- */
-
+/* ------------------------------- Constructor ------------------------------ */
+  AppWm(
+    super._model,
+  )   : _themeColors = ValueNotifier<AppColors>(AppColors.light),
+        _languageCode = ValueNotifier<String>(_model.language.code),
+        _router = AppRouter();
+/* --------------------------------- Getters -------------------------------- */
   @override
   RouterConfig<Object> get routerConfig => _router.config();
-
+/* -------------------------------------------------------------------------- */
   @override
   ValueListenable<AppColors> get colors => _themeColors;
-
+/* -------------------------------------------------------------------------- */
   @override
   ValueListenable<String> get languageCode => _languageCode;
-
-  /* --------------------------------- Methods -------------------------------- */
+/* -------------------------------------------------------------------------- */
+  @override
+  List<LocalizationsDelegate<dynamic>> get localizationDelegates =>
+      AppLocalizations.localizationsDelegates;
+/* -------------------------------------------------------------------------- */
+  @override
+  List<Locale> get supportedLocales => AppLocalizations.supportedLocales;
+/* --------------------------------- Methods -------------------------------- */
   void _updateThemeColors(AppThemeMode mode) {
     if (mode == AppThemeMode.light) {
       _themeColors.value = AppColors.light;
@@ -57,10 +65,9 @@ class AppWm extends WidgetModel<App, AppModel> implements AppIWm {
     _updateThemeManager();
   }
 
-// TODO create Language
-//   void _updateLocale(Language lang) {
-//     _languageCode.value = lang.code;
-//   }
+  void _updateLocale(Language lang) {
+    _languageCode.value = lang.code;
+  }
 
   void _handleBrightnessChanges() {
     // ? If system theme mode configured and theme have not been
@@ -69,8 +76,6 @@ class AppWm extends WidgetModel<App, AppModel> implements AppIWm {
       _resolveBrightness();
     }
     WidgetsBinding.instance.handlePlatformBrightnessChanged();
-
-    _resolveBrightness();
   }
 
   void _resolveBrightness() {
@@ -92,13 +97,11 @@ class AppWm extends WidgetModel<App, AppModel> implements AppIWm {
     }
   }
 
-  /* ---------------------------- Init widget model --------------------------- */
-
   @override
   void initWidgetModel() async {
     _updateThemeColors(model.mode);
     model.mode$.listen(_updateThemeColors);
-    // model.language$.listen(_updateLocale);
+    model.language$.listen(_updateLocale);
     _platformDispatcher = WidgetsBinding.instance.platformDispatcher;
     _platformDispatcher.onPlatformBrightnessChanged = _handleBrightnessChanges;
     await model.restoreSettings().run();

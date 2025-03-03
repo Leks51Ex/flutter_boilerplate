@@ -6,8 +6,8 @@ class SettingsState with _$SettingsState {
 
   const factory SettingsState({
     required AppThemeMode mode,
-    //required Language language,
-    // required List<Language> supportedLanguages,
+    required Language language,
+    required List<Language> supportedLanguages,
     @Default(false) bool manualTheme,
   }) = _SettingsInitial;
 }

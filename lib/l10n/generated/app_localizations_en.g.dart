@@ -8,5 +8,6 @@ import 'app_localizations.g.dart';
 class AppLocalizationsEn extends AppLocalizations {
   AppLocalizationsEn([String locale = 'en']) : super(locale);
 
-
+  @override
+  String get test => 'English';
 }

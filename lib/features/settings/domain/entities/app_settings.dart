@@ -15,7 +15,7 @@ class AppSettings extends Equatable {
   /// [AppSettings] factory constructor with default values
 
   factory AppSettings.initial() =>
-      const AppSettings(mode: AppThemeMode.system, languageCode: 'en');
+      const AppSettings(mode: AppThemeMode.system, languageCode: 'ru');
 
   @override
   List<Object?> get props => <Object?>[mode];

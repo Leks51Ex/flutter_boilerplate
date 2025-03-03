@@ -17,11 +17,11 @@ class AppSettingsDto extends Equatable {
   const AppSettingsDto(this.mode, this.code);
 
   factory AppSettingsDto.initial() {
-    return const AppSettingsDto(AppThemeDto.system, 'en');
+    return const AppSettingsDto(AppThemeDto.system, 'ru');
   }
 
   factory AppSettingsDto.fromEntity(AppSettings entity) {
-    return AppSettingsDto(fromRealMode(entity.mode), 'en');
+    return AppSettingsDto(fromRealMode(entity.mode), 'ru');
   }
 
   AppSettingsDto copyWith({AppThemeDto? themeMode, String? code}) =>

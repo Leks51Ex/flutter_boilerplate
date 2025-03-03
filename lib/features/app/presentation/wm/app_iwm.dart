@@ -7,4 +7,6 @@ abstract interface class AppIWm implements IWidgetModel {
   ValueListenable<String> get languageCode;
   ValueListenable<AppColors> get colors;
   RouterConfig<Object> get routerConfig;
+  List<Locale> get supportedLocales;
+  List<LocalizationsDelegate<dynamic>> get localizationDelegates;
 }

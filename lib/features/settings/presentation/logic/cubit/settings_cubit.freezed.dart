@@ -16,9 +16,9 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$SettingsState {
-  AppThemeMode get mode =>
-      throw _privateConstructorUsedError; //required Language language,
-// required List<Language> supportedLanguages,
+  AppThemeMode get mode => throw _privateConstructorUsedError;
+  Language get language => throw _privateConstructorUsedError;
+  List<Language> get supportedLanguages => throw _privateConstructorUsedError;
   bool get manualTheme => throw _privateConstructorUsedError;
 
   /// Create a copy of SettingsState
@@ -34,7 +34,11 @@ abstract class $SettingsStateCopyWith<$Res> {
           SettingsState value, $Res Function(SettingsState) then) =
       _$SettingsStateCopyWithImpl<$Res, SettingsState>;
   @useResult
-  $Res call({AppThemeMode mode, bool manualTheme});
+  $Res call(
+      {AppThemeMode mode,
+      Language language,
+      List<Language> supportedLanguages,
+      bool manualTheme});
 }
 
 /// @nodoc
@@ -53,6 +57,8 @@ class _$SettingsStateCopyWithImpl<$Res, $Val extends SettingsState>
   @override
   $Res call({
     Object? mode = null,
+    Object? language = null,
+    Object? supportedLanguages = null,
     Object? manualTheme = null,
   }) {
     return _then(_value.copyWith(
@@ -60,6 +66,14 @@ class _$SettingsStateCopyWithImpl<$Res, $Val extends SettingsState>
           ? _value.mode
           : mode // ignore: cast_nullable_to_non_nullable
               as AppThemeMode,
+      language: null == language
+          ? _value.language
+          : language // ignore: cast_nullable_to_non_nullable
+              as Language,
+      supportedLanguages: null == supportedLanguages
+          ? _value.supportedLanguages
+          : supportedLanguages // ignore: cast_nullable_to_non_nullable
+              as List<Language>,
       manualTheme: null == manualTheme
           ? _value.manualTheme
           : manualTheme // ignore: cast_nullable_to_non_nullable
@@ -76,7 +90,11 @@ abstract class _$$SettingsInitialImplCopyWith<$Res>
       __$$SettingsInitialImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({AppThemeMode mode, bool manualTheme});
+  $Res call(
+      {AppThemeMode mode,
+      Language language,
+      List<Language> supportedLanguages,
+      bool manualTheme});
 }
 
 /// @nodoc
@@ -93,6 +111,8 @@ class __$$SettingsInitialImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? mode = null,
+    Object? language = null,
+    Object? supportedLanguages = null,
     Object? manualTheme = null,
   }) {
     return _then(_$SettingsInitialImpl(
@@ -100,6 +120,14 @@ class __$$SettingsInitialImplCopyWithImpl<$Res>
           ? _value.mode
           : mode // ignore: cast_nullable_to_non_nullable
               as AppThemeMode,
+      language: null == language
+          ? _value.language
+          : language // ignore: cast_nullable_to_non_nullable
+              as Language,
+      supportedLanguages: null == supportedLanguages
+          ? _value._supportedLanguages
+          : supportedLanguages // ignore: cast_nullable_to_non_nullable
+              as List<Language>,
       manualTheme: null == manualTheme
           ? _value.manualTheme
           : manualTheme // ignore: cast_nullable_to_non_nullable
@@ -111,20 +139,34 @@ class __$$SettingsInitialImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$SettingsInitialImpl extends _SettingsInitial {
-  const _$SettingsInitialImpl({required this.mode, this.manualTheme = false})
-      : super._();
+  const _$SettingsInitialImpl(
+      {required this.mode,
+      required this.language,
+      required final List<Language> supportedLanguages,
+      this.manualTheme = false})
+      : _supportedLanguages = supportedLanguages,
+        super._();
 
   @override
   final AppThemeMode mode;
-//required Language language,
-// required List<Language> supportedLanguages,
+  @override
+  final Language language;
+  final List<Language> _supportedLanguages;
+  @override
+  List<Language> get supportedLanguages {
+    if (_supportedLanguages is EqualUnmodifiableListView)
+      return _supportedLanguages;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_supportedLanguages);
+  }
+
   @override
   @JsonKey()
   final bool manualTheme;
 
   @override
   String toString() {
-    return 'SettingsState(mode: $mode, manualTheme: $manualTheme)';
+    return 'SettingsState(mode: $mode, language: $language, supportedLanguages: $supportedLanguages, manualTheme: $manualTheme)';
   }
 
   @override
@@ -133,12 +175,17 @@ class _$SettingsInitialImpl extends _SettingsInitial {
         (other.runtimeType == runtimeType &&
             other is _$SettingsInitialImpl &&
             (identical(other.mode, mode) || other.mode == mode) &&
+            (identical(other.language, language) ||
+                other.language == language) &&
+            const DeepCollectionEquality()
+                .equals(other._supportedLanguages, _supportedLanguages) &&
             (identical(other.manualTheme, manualTheme) ||
                 other.manualTheme == manualTheme));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, mode, manualTheme);
+  int get hashCode => Object.hash(runtimeType, mode, language,
+      const DeepCollectionEquality().hash(_supportedLanguages), manualTheme);
 
   /// Create a copy of SettingsState
   /// with the given fields replaced by the non-null parameter values.
@@ -153,12 +200,17 @@ class _$SettingsInitialImpl extends _SettingsInitial {
 abstract class _SettingsInitial extends SettingsState {
   const factory _SettingsInitial(
       {required final AppThemeMode mode,
+      required final Language language,
+      required final List<Language> supportedLanguages,
       final bool manualTheme}) = _$SettingsInitialImpl;
   const _SettingsInitial._() : super._();
 
   @override
-  AppThemeMode get mode; //required Language language,
-// required List<Language> supportedLanguages,
+  AppThemeMode get mode;
+  @override
+  Language get language;
+  @override
+  List<Language> get supportedLanguages;
   @override
   bool get manualTheme;
 

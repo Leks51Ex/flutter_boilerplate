@@ -95,6 +95,11 @@ abstract class AppLocalizations {
     Locale('ru')
   ];
 
+  /// No description provided for @test.
+  ///
+  /// In en, this message translates to:
+  /// **'English'**
+  String get test;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

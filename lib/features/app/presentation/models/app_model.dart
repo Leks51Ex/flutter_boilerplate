@@ -4,6 +4,7 @@ import 'package:elementary/elementary.dart';
 import 'package:flutter_boilerplate/core/failure.dart';
 import 'package:flutter_boilerplate/features/settings/domain/contracts/settings_repository.dart';
 import 'package:flutter_boilerplate/features/settings/domain/entities/app_settings.dart';
+import 'package:flutter_boilerplate/features/settings/domain/entities/language/language.dart';
 import 'package:flutter_boilerplate/features/settings/domain/entities/theme/theme_modes.dart';
 import 'package:flutter_boilerplate/features/settings/domain/usecases/read_settings_usecase.dart';
 import 'package:flutter_boilerplate/features/settings/presentation/logic/cubit/settings_cubit.dart';
@@ -26,7 +27,7 @@ class AppModel extends ElementaryModel {
   /// Returns currently configured [AppThemeMode]
   AppThemeMode get mode => _settingsCubit.state.mode;
 /* -------------------------------------------------------------------------- */
-  // Language get language => _settingsCubit.state.language;
+  Language get language => _settingsCubit.state.language;
 /* -------------------------------------------------------------------------- */
   /// Flag which marks that theme have been manualy configured by user
   bool get isManualConfigured => _settingsCubit.state.manualTheme;
@@ -40,13 +41,13 @@ class AppModel extends ElementaryModel {
         ),
       ).asBroadcastStream();
 /* -------------------------------------------------------------------------- */
-  // Stream<Language> get language$ => _settingsCubit.stream.transform(
-  //       StreamTransformer<SettingsState, Language>.fromHandlers(
-  //         handleData: (SettingsState state, EventSink<Language> sink) {
-  //           sink.add(state.language);
-  //         },
-  //       ),
-  //     ).asBroadcastStream();
+  Stream<Language> get language$ => _settingsCubit.stream.transform(
+        StreamTransformer<SettingsState, Language>.fromHandlers(
+          handleData: (SettingsState state, EventSink<Language> sink) {
+            sink.add(state.language);
+          },
+        ),
+      ).asBroadcastStream();
 
 /* -------------------------------------------------------------------------- */
   TaskEither<Failure, Unit> restoreSettings() {
