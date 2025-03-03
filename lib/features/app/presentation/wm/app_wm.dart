@@ -6,9 +6,9 @@ import 'package:flutter_boilerplate/features/app/presentation/models/app_model.d
 import 'package:flutter_boilerplate/features/app/presentation/widgets/app.dart';
 import 'package:flutter_boilerplate/features/app/presentation/wm/app_iwm.dart';
 import 'package:flutter_boilerplate/features/navigation/domain/entities/router.dart';
-import 'package:flutter_boilerplate/features/settings/domain/entities/app_colors.dart';
-import 'package:flutter_boilerplate/features/settings/domain/entities/theme_manager.dart';
-import 'package:flutter_boilerplate/features/settings/domain/entities/theme_modes.dart';
+import 'package:flutter_boilerplate/common/app_colors.dart';
+import 'package:flutter_boilerplate/features/settings/domain/entities/theme/theme_manager.dart';
+import 'package:flutter_boilerplate/features/settings/domain/entities/theme/theme_modes.dart';
 
 AppWm appWmFactory(BuildContext context) {
   final AppModel model = AppModel(sl(), sl());

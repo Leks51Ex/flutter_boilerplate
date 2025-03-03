@@ -7,22 +7,24 @@ part 'router.gr.dart';
 
 @AutoRouterConfig()
 class AppRouter extends RootStackRouter {
+  List<CustomRoute> customRoutes = [
+    CustomRoute(
+      page: TestFirstRoute.page,
+      path: '/main',
+      initial: true,
+      transitionsBuilder: (_, __, ___, Widget child) => child,
+      durationInMilliseconds: 0,
+      reverseDurationInMilliseconds: 0,
+    ),
+    CustomRoute(
+      page: TestSecondRoute.page,
+      path: '/second',
+      transitionsBuilder: (_, __, ___, Widget child) => child,
+      durationInMilliseconds: 0,
+      reverseDurationInMilliseconds: 0,
+    ),
+  ];
+
   @override
-  List<AutoRoute> get routes => <AutoRoute>[
-        CustomRoute(
-          page: TestFirstRoute.page,
-          path: '/main',
-          initial: true,
-          transitionsBuilder: (_, __, ___, Widget child) => child,
-          durationInMilliseconds: 0,
-          reverseDurationInMilliseconds: 0,
-        ),
-        CustomRoute(
-          page: TestSecondRoute.page,
-          path: '/second',
-          transitionsBuilder: (_, __, ___, Widget child) => child,
-          durationInMilliseconds: 0,
-          reverseDurationInMilliseconds: 0,
-        )
-      ];
+  List<AutoRoute> get routes => customRoutes;
 }

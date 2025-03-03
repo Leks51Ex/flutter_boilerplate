@@ -5,12 +5,10 @@ import 'package:flutter_boilerplate/features/settings/data/dto/app_settings_dto.
 import 'package:flutter_boilerplate/features/settings/data/dto/app_theme_dto.dart';
 import 'package:flutter_boilerplate/features/settings/domain/contracts/settings_repository.dart';
 import 'package:flutter_boilerplate/features/settings/domain/entities/app_settings.dart';
-import 'package:flutter_boilerplate/features/settings/domain/entities/theme_modes.dart';
+import 'package:flutter_boilerplate/features/settings/domain/entities/theme/theme_modes.dart';
 import 'package:fpdart/fpdart.dart';
 import 'package:hive/hive.dart';
 
-/// {@category Repositories}
-/// {@subCategory Information displays}
 class HiveSettingsRepository implements SettingsRepository {
 /* ------------------------------ dependencies ------------------------------ */
 
@@ -152,12 +150,13 @@ class HiveSettingsRepository implements SettingsRepository {
 
   @override
   TaskEither<Failure, Unit> saveLanguageSettings(String languageCode) {
-    return extractDto()
-        .flatMap(
-          (AppSettingsDto r) => TaskEither<Failure, AppSettingsDto>.of(
-            r.copyWith(code: languageCode),
-          ),
-        )
-        .flatMap(storeDto);
+    // return extractDto()
+    //     .flatMap(
+    //       (AppSettingsDto r) => TaskEither<Failure, AppSettingsDto>.of(
+    //         r.copyWith(code: languageCode),
+    //       ),
+    //     )
+    //     .flatMap(storeDto);
+    throw UnimplementedError();
   }
 }

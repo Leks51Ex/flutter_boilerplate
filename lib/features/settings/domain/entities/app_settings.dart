@@ -1,5 +1,5 @@
 import 'package:equatable/equatable.dart';
-import 'package:flutter_boilerplate/features/settings/domain/entities/theme_modes.dart';
+import 'package:flutter_boilerplate/features/settings/domain/entities/theme/theme_modes.dart';
 
 /// Application settings entity
 class AppSettings extends Equatable {

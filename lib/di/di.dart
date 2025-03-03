@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_boilerplate/features/settings/data/repositories/hive_settings_repository.dart';
 import 'package:flutter_boilerplate/features/settings/domain/contracts/settings_repository.dart';
-import 'package:flutter_boilerplate/features/settings/domain/entities/app_colors.dart';
-import 'package:flutter_boilerplate/features/settings/domain/entities/theme_manager.dart';
+import 'package:flutter_boilerplate/common/app_colors.dart';
+import 'package:flutter_boilerplate/features/settings/domain/entities/theme/theme_manager.dart';
 import 'package:flutter_boilerplate/features/settings/presentation/logic/cubit/settings_cubit.dart';
 import 'package:get_it/get_it.dart';
 import 'package:hive/hive.dart';

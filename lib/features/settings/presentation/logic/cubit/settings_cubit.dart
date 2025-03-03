@@ -4,7 +4,7 @@
 // from head person from Communication and Radionavigation
 
 import 'package:bloc/bloc.dart';
-import 'package:flutter_boilerplate/features/settings/domain/entities/theme_modes.dart';
+import 'package:flutter_boilerplate/features/settings/domain/entities/theme/theme_modes.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'settings_state.dart';

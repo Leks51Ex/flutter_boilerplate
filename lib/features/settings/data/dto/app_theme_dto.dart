@@ -1,5 +1,5 @@
 import 'package:flutter_boilerplate/common/hive_types_id.dart';
-import 'package:flutter_boilerplate/features/settings/domain/entities/theme_modes.dart';
+import 'package:flutter_boilerplate/features/settings/domain/entities/theme/theme_modes.dart';
 import 'package:hive/hive.dart';
 
 part 'app_theme_dto.g.dart';

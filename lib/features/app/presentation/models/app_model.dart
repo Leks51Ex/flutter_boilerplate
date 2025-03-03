@@ -4,7 +4,7 @@ import 'package:elementary/elementary.dart';
 import 'package:flutter_boilerplate/core/failure.dart';
 import 'package:flutter_boilerplate/features/settings/domain/contracts/settings_repository.dart';
 import 'package:flutter_boilerplate/features/settings/domain/entities/app_settings.dart';
-import 'package:flutter_boilerplate/features/settings/domain/entities/theme_modes.dart';
+import 'package:flutter_boilerplate/features/settings/domain/entities/theme/theme_modes.dart';
 import 'package:flutter_boilerplate/features/settings/domain/usecases/read_settings_usecase.dart';
 import 'package:flutter_boilerplate/features/settings/presentation/logic/cubit/settings_cubit.dart';
 import 'package:fpdart/fpdart.dart';

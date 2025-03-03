@@ -1,6 +1,6 @@
 import 'package:flutter_boilerplate/core/failure.dart';
 import 'package:flutter_boilerplate/features/settings/domain/entities/app_settings.dart';
-import 'package:flutter_boilerplate/features/settings/domain/entities/theme_modes.dart';
+import 'package:flutter_boilerplate/features/settings/domain/entities/theme/theme_modes.dart';
 import 'package:fpdart/fpdart.dart';
 
 /// Application settings repository
