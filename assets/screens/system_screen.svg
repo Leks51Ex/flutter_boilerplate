@@ -1,0 +1,55 @@
+<svg width="158" height="103" viewBox="0 0 158 103" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g clip-path="url(#clip0_421_1342)">
+    <path d="M0 4C0 1.79086 1.79086 0 4 0H79V103H4C1.79086 103 0 101.209 0 99V4Z" fill="#F0F0F0" />
+    <circle cx="7" cy="6" r="3" fill="#00B5B5" />
+    <rect x="15" y="3" width="33" height="6" rx="1" fill="#DEDEDE" />
+    <rect x="41" y="19" width="117" height="92" rx="4" fill="#DEDEDE" />
+    <rect x="53" y="3" width="19" height="6" rx="1" fill="#DEDEDE" />
+    <rect x="4" y="19" width="19" height="4" rx="1" fill="#DEDEDE" />
+    <rect x="4" y="25" width="24" height="4" rx="1" fill="#00B5B5" />
+    <rect x="4" y="31" width="24" height="4" rx="1" fill="#DEDEDE" />
+    <rect x="4" y="48" width="24" height="4" rx="1" fill="#DEDEDE" />
+    <rect opacity="0.5" x="48" y="23" width="19" height="4" rx="1" fill="#AFAFAF" />
+    <rect x="48" y="31" width="112" height="17" rx="2" fill="#F0F0F0" />
+    <rect x="48" y="54" width="112" height="52" rx="2" fill="#F0F0F0" />
+    <line x1="-1" y1="12.75" x2="157" y2="12.75" stroke="#DEDEDE" stroke-width="0.5" />
+    <circle cx="52" cy="35" r="1" fill="#00B5B5" />
+    <rect x="51" y="38" width="30" height="2" rx="1" fill="#DEDEDE" />
+    <rect x="51" y="42" width="30" height="2" rx="1" fill="#DEDEDE" />
+    <rect x="53" y="59" width="95" height="2" rx="1" fill="#DEDEDE" />
+    <rect x="53" y="63" width="95" height="2" rx="1" fill="#DEDEDE" />
+    <rect x="53" y="67" width="95" height="2" rx="1" fill="#DEDEDE" />
+    <rect x="53" y="71" width="95" height="2" rx="1" fill="#DEDEDE" />
+  </g>
+  <g clip-path="url(#clip1_421_1342)">
+    <path d="M79 0H154C156.209 0 158 1.79086 158 4V99C158 101.209 156.209 103 154 103H79V0Z"
+      fill="#121212" />
+    <rect x="41" y="19" width="117" height="92" rx="4" fill="#343333" />
+    <rect x="48" y="31" width="112" height="17" rx="2" fill="#121212" />
+    <rect x="48" y="54" width="112" height="52" rx="2" fill="#121212" />
+    <line x1="-1" y1="12.75" x2="157" y2="12.75" stroke="#343333" stroke-width="0.5" />
+    <line x1="85.25" y1="31" x2="85.25" y2="48" stroke="#343333" stroke-width="0.5" />
+    <line x1="126.25" y1="31" x2="126.25" y2="48" stroke="#343333" stroke-width="0.5" />
+    <circle cx="89" cy="35" r="1" fill="#F4D35E" />
+    <circle cx="130" cy="35" r="1" fill="#F4D35E" />
+    <rect x="51" y="38" width="30" height="2" rx="1" fill="#343333" />
+    <rect x="51" y="42" width="30" height="2" rx="1" fill="#343333" />
+    <rect x="53" y="59" width="95" height="2" rx="1" fill="#343333" />
+    <rect x="53" y="63" width="95" height="2" rx="1" fill="#343333" />
+    <rect x="53" y="67" width="95" height="2" rx="1" fill="#343333" />
+    <rect x="53" y="71" width="95" height="2" rx="1" fill="#343333" />
+    <rect x="88" y="38" width="30" height="2" rx="1" fill="#343333" />
+    <rect x="88" y="42" width="30" height="2" rx="1" fill="#343333" />
+    <rect x="129" y="38" width="30" height="2" rx="1" fill="#343333" />
+    <rect x="129" y="42" width="30" height="2" rx="1" fill="#343333" />
+  </g>
+  <defs>
+    <clipPath id="clip0_421_1342">
+      <path d="M0 4C0 1.79086 1.79086 0 4 0H79V103H4C1.79086 103 0 101.209 0 99V4Z" fill="white" />
+    </clipPath>
+    <clipPath id="clip1_421_1342">
+      <path d="M79 0H154C156.209 0 158 1.79086 158 4V99C158 101.209 156.209 103 154 103H79V0Z"
+        fill="white" />
+    </clipPath>
+  </defs>
+</svg>

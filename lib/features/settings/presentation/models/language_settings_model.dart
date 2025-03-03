@@ -2,9 +2,9 @@ import 'dart:async';
 
 import 'package:elementary/elementary.dart';
 import 'package:flutter_boilerplate/core/failure.dart';
-import 'package:flutter_boilerplate/features/settings/domain/contracts/settings_repository.dart';
+import 'package:flutter_boilerplate/features/app/domain/usecases/store_language_usecase.dart';
 import 'package:flutter_boilerplate/features/settings/domain/entities/language/language.dart';
-import 'package:flutter_boilerplate/features/settings/domain/usecases/store_language_usecase.dart';
+import 'package:flutter_boilerplate/features/settings/domain/contract/settings.repository.dart';
 import 'package:flutter_boilerplate/features/settings/presentation/logic/cubit/settings_cubit.dart';
 import 'package:fpdart/fpdart.dart';
 

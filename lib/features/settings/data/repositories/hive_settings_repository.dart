@@ -1,14 +1,16 @@
-import 'package:flutter_boilerplate/common/hive_boxes_names.dart';
+import 'package:flutter_boilerplate/common/hive_boxes.names.dart';
 import 'package:flutter_boilerplate/core/failure.dart';
 import 'package:flutter_boilerplate/core/failures/storage.failure.dart';
-import 'package:flutter_boilerplate/features/settings/data/dto/app_settings_dto.dart';
-import 'package:flutter_boilerplate/features/settings/data/dto/app_theme_dto.dart';
-import 'package:flutter_boilerplate/features/settings/domain/contracts/settings_repository.dart';
-import 'package:flutter_boilerplate/features/settings/domain/entities/app_settings.dart';
-import 'package:flutter_boilerplate/features/settings/domain/entities/theme/theme_modes.dart';
+import 'package:flutter_boilerplate/features/settings/data/dtos/app_settings.dto.dart';
+import 'package:flutter_boilerplate/features/settings/data/dtos/app_theme.dto.dart';
+import 'package:flutter_boilerplate/features/settings/domain/contract/settings.repository.dart';
+import 'package:flutter_boilerplate/features/settings/domain/entities/theme/app_theme.dart';
+import 'package:flutter_boilerplate/features/settings/domain/entities/theme/modes.dart';
 import 'package:fpdart/fpdart.dart';
 import 'package:hive/hive.dart';
 
+/// {@category Repositories}
+/// {@subCategory Information displays}
 class HiveSettingsRepository implements SettingsRepository {
 /* ------------------------------ dependencies ------------------------------ */
 
@@ -132,7 +134,7 @@ class HiveSettingsRepository implements SettingsRepository {
   /// Will return [StorageFailure] if this process could not
   /// complete successfully
   @override
-  TaskEither<Failure, Unit> saveThemeSettings(AppThemeMode mode) {
+  TaskEither<Failure, Unit> saveTheme(AppThemeMode mode) {
     /// Extract current value of settings
     return extractDto()
         // Patch currently stored value with new

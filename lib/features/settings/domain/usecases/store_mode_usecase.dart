@@ -1,7 +1,7 @@
 import 'package:flutter_boilerplate/core/failure.dart';
 import 'package:flutter_boilerplate/core/usecase.dart';
-import 'package:flutter_boilerplate/features/settings/domain/contracts/settings_repository.dart';
-import 'package:flutter_boilerplate/features/settings/domain/entities/theme/theme_modes.dart';
+import 'package:flutter_boilerplate/features/settings/domain/contract/settings.repository.dart';
+import 'package:flutter_boilerplate/features/settings/domain/entities/theme/modes.dart';
 import 'package:fpdart/fpdart.dart';
 
 ///
@@ -19,6 +19,6 @@ class StoreThemeModeUseCase extends UseCase<AppThemeMode, AppThemeMode> {
 
   @override
   TaskEither<Failure, AppThemeMode> call(AppThemeMode params) {
-    return _repository.saveThemeSettings(params).map((Unit r) => params);
+    return _repository.saveTheme(params).map((Unit r) => params);
   }
 }

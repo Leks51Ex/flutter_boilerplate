@@ -2,13 +2,13 @@ import 'package:elementary/elementary.dart';
 import 'package:elementary_helper/elementary_helper.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_boilerplate/common/app_colors.dart';
 import 'package:flutter_boilerplate/di/di.dart';
 import 'package:flutter_boilerplate/features/settings/domain/entities/language/language.dart';
-import 'package:flutter_boilerplate/features/settings/domain/entities/theme/theme_manager.dart';
 import 'package:flutter_boilerplate/features/settings/presentation/models/language_settings_model.dart';
-import 'package:flutter_boilerplate/ui/components/radio_button/radio_button.dart';
-import 'package:flutter_boilerplate/ui/components/radio_button/radio_button_iwm.dart';
+import 'package:flutter_boilerplate/common/app_colors.dart';
+import 'package:flutter_boilerplate/features/settings/domain/entities/theme/theme_manager.dart';
+import 'package:flutter_boilerplate/ui/components/radio_button.dart';
+import 'package:flutter_boilerplate/ui/components/radio_button.wm.iface.dart';
 import 'package:provider/provider.dart';
 
 LanguageModeSetWM Function(BuildContext context) languageModeSetWMFactory({
@@ -29,7 +29,7 @@ LanguageModeSetWM Function(BuildContext context) languageModeSetWMFactory({
 
 class LanguageModeSetWM
     extends WidgetModel<RadioButton<String>, LanguageSettingsModel>
-    implements RadioButtonIWM<String> {
+    implements RadioButtonWM<String> {
   /* --------------------------------- Fields --------------------------------- */
 
   final String languageCode;
@@ -80,5 +80,5 @@ class LanguageModeSetWM
 
   @override
   Color? get activeColor =>
-      _colorsProvider.currentTheme.extension<AppColors>()?.background;
+      _colorsProvider.currentTheme.extension<AppColors>()?.buttonColor;
 }

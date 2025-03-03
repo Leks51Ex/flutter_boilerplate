@@ -1,3 +1,82 @@
 {
-    "test": "English"
+    "saveButtonName": "Save",
+    "cancelButtonName": "Cancel",
+    "languageSettingsTop": "System Language",
+    "languageSettingChild": "Set the language of the application by selecting one of the suggested options",
+    "systemSettingTop": "System Settings",
+    "settingsTitle": "Settings",
+    "navigationTitle": "Navigation",
+    "routesTitle": "Routes",
+    "profileTitle": "Profile",
+    "fuelConsumptionTitle":"Fuel",
+    "menuTitle": "Menu",
+    "accountTitle": "Account",
+    "darkModeTitile": "Dark Mode",
+    "dashboardTitle": "Dashboard",
+    "themeTitle": "Theme",
+    "languageTitle": "Language",
+    "soundsTitle": "Sounds",
+    "termsOfUseTitle": "Terms of use",
+    "themeSettingTop": "Application theme",
+    "themeSettingChild": "Choose the most applicable application theme that matches current environment",
+    "systemThemeTitleCard": "System",
+    "lightThemeTitleCard": "Light",
+    "darkThemeTitleCard": "Dark",
+    "soundSettingsTop": "Sound",
+    "soundSettingsChild": "Customize the required\n sound settings",
+    "notificationTitleSound": "Notification sound",
+    "termsSettingsTop": "Rules and conventions",
+    "termsSettingsChild": "Read the main rules\n and agreements",
+    "privacyPoliceTitle": "Privacy police",
+    "termsOfUseTitleSettings": "Terms of use ",
+    "themeSystemSynchronization": "Synchronization with system",
+    "systemThemeDescriptionCard": "Automatic themes changes",
+    "lightThemeDescriptionCard": "Recomended for daylight environment",
+    "darkThemeDescriptionCard": "Recomended for twilight and night environment",
+    "routePageTitle": "Routes",
+    "arrivalPageTitle": "Arrival time",
+    "cargoPageTitle": "Cargo",
+    "speedModePageTitle": "Speed Mode",
+    "controlPointPageTitle": "Control points ",
+    "sonarWidgetTitle": "SONAR",
+    "metersTitle": "Meters",
+    "footTitle": "Foots",
+    "phatomsTitle": "Fathoms",
+    "serviceConnection": "Connecting to Venom service",
+    "serviceNotFound": "Failed: Service was not found",
+    "retryButton": "Retry",
+    "deleteRouteHeader": "Delete route",
+    "deleteRouteConfirm": "Are you sure you want to delete the selected route?",
+    "arrivalHeader": "Arrival",
+    "departureHeader": "Departure",
+    "downloadHeader": "Download",
+    "addNewRouteHeader": "Add new route",
+    "routeListHeader": "List of routes",
+    "arrivalHintText": "Enter the sending port",
+    "departureHintText": "Enter the destination port",
+    "newRouteHeader": "New route",
+    "addRouteButton": "Add route",
+    "uploadRoutePart1": "Click or drop here",
+    "uploadRoutePart2": "to upload the new file",
+    "uploadRoutePart3": "with route",
+    "connectButton": "connect",
+    "ip_address_field": "ip address",
+    "port_field": "port",
+    "not_select_file": "You have not selected a route file",
+    "not_select_route_points": "You have not selected a departure or arrival point",
+    "add_route_field": "Adding a route",
+    "duitTitle": "Duit"
+    
 }
+
+
+
+      
+
+  
+   
+
+   
+
+
+

@@ -1,6 +1,3 @@
-
-
-
 import 'package:flutter_boilerplate/core/failure.dart';
 
 class StorageFailure extends Failure {

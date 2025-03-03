@@ -56,17 +56,17 @@ class _$SettingsStateCopyWithImpl<$Res, $Val extends SettingsState>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? mode = null,
-    Object? language = null,
+    Object? mode = freezed,
+    Object? language = freezed,
     Object? supportedLanguages = null,
     Object? manualTheme = null,
   }) {
     return _then(_value.copyWith(
-      mode: null == mode
+      mode: freezed == mode
           ? _value.mode
           : mode // ignore: cast_nullable_to_non_nullable
               as AppThemeMode,
-      language: null == language
+      language: freezed == language
           ? _value.language
           : language // ignore: cast_nullable_to_non_nullable
               as Language,
@@ -110,17 +110,17 @@ class __$$SettingsInitialImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? mode = null,
-    Object? language = null,
+    Object? mode = freezed,
+    Object? language = freezed,
     Object? supportedLanguages = null,
     Object? manualTheme = null,
   }) {
     return _then(_$SettingsInitialImpl(
-      mode: null == mode
+      mode: freezed == mode
           ? _value.mode
           : mode // ignore: cast_nullable_to_non_nullable
               as AppThemeMode,
-      language: null == language
+      language: freezed == language
           ? _value.language
           : language // ignore: cast_nullable_to_non_nullable
               as Language,
@@ -174,9 +174,8 @@ class _$SettingsInitialImpl extends _SettingsInitial {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$SettingsInitialImpl &&
-            (identical(other.mode, mode) || other.mode == mode) &&
-            (identical(other.language, language) ||
-                other.language == language) &&
+            const DeepCollectionEquality().equals(other.mode, mode) &&
+            const DeepCollectionEquality().equals(other.language, language) &&
             const DeepCollectionEquality()
                 .equals(other._supportedLanguages, _supportedLanguages) &&
             (identical(other.manualTheme, manualTheme) ||
@@ -184,8 +183,12 @@ class _$SettingsInitialImpl extends _SettingsInitial {
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, mode, language,
-      const DeepCollectionEquality().hash(_supportedLanguages), manualTheme);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(mode),
+      const DeepCollectionEquality().hash(language),
+      const DeepCollectionEquality().hash(_supportedLanguages),
+      manualTheme);
 
   /// Create a copy of SettingsState
   /// with the given fields replaced by the non-null parameter values.

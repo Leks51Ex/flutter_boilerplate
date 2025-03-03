@@ -1,5 +1,3 @@
-
-
 import 'package:flutter_boilerplate/core/failure.dart';
 import 'package:fpdart/fpdart.dart';
 
