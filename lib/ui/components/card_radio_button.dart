@@ -1,9 +1,7 @@
 import 'package:elementary/elementary.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_boilerplate/common/app_colors.dart';
 import 'package:flutter_boilerplate/ui/components/card_radio_button.wm.iface.dart';
 import 'package:flutter_boilerplate/ui/util/responsivity.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 /// Main widget for CardRadioButton
 class CardRadioButton extends ElementaryWidget<CardRadioButtonWM> {

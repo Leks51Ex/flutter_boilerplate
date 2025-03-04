@@ -291,7 +291,7 @@ class AppColors extends ThemeExtension<AppColors> {
 
   static const AppColors light = AppColors(
     brightness: Brightness.light,
-    background: Color.fromRGBO(240, 240, 240, 1),
+    background: Color.fromRGBO(255, 255, 255, 1),
     baseText: Color.fromRGBO(22, 22, 22, 1),
     baseAccent: Color.fromRGBO(0, 181, 181, 1),
     essenceBackground: Color.fromRGBO(222, 222, 222, 0.5),
@@ -331,7 +331,7 @@ class AppColors extends ThemeExtension<AppColors> {
 
   static const AppColors dark = AppColors(
     brightness: Brightness.dark,
-    background: Color.fromRGBO(18, 18, 18, 0.98),
+    background: Color.fromRGBO(28, 27, 32, 1),
     baseText: Color.fromRGBO(229, 229, 229, 1),
     baseAccent: Color.fromRGBO(244, 211, 94, 1),
     essenceBackground: Color.fromRGBO(34, 33, 33, 0.5),
