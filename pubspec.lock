@@ -12,7 +12,7 @@ packages:
   _macros:
     dependency: transitive
     description: dart
-    source: sdkg
+    source: sdk
     version: "0.3.3"
   analyzer:
     dependency: transitive
