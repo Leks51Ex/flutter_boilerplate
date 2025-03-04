@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"name": "flutter_boilerplate",
+			"path": "../../.."
+		},
+		{
+			"name": "assets",
+			"path": "../../../../venom-ui/assets"
+		}
+	],
+	"settings": {}
+}
